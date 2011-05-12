@@ -3,5 +3,3 @@
     = render :partial => "offers", :locals => { :offer  => offer }
 #coupon_pagignation
   = pagination_helper(params[:page])
-:javascript
-  $("#coupons").columnize({ columns: 2});

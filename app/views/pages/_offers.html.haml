@@ -1,14 +1,12 @@
-.coupon_container
-  .coupon{'data-coupon_id' => offer.coupon_id}
-    %h3.header= offer.offer_summary
-    .main
-      .main_image
-        %img{:src => offer.image_url}
-      .main_text
-        %p.coupon_copy= offer.display_name + " " + offer.short_description
-        %p.expires= "Expires: #{Date.parse(offer.campaign_end_date).to_s(:coupon_format)}"
-    .menu_bar
-      -if offer.coupon_id.present? && offer.coupon_state != "saved"
-        =link_to image_tag("zavers_save_it.png"), save_coupon_path(offer.coupon_id), :remote => true
-      -elsif offer.coupon_id.present? && offer.coupon_state == "saved"
-        =link_to image_tag("delete.png"), remove_coupon_path(offer.coupon_id), :remote => true
+.coupon{'data-coupon_id' => offer.coupon_id}
+  .header
+    %p.expires= "Expires: #{Date.parse(offer.campaign_end_date).to_s(:coupon_format)}"
+    %h2.header= offer.offer_summary
+  .body.clearfix
+    %img{:src => offer.image_url}
+    %p.coupon_copy= offer.display_name + " " + offer.short_description
+  .footer.clearfix
+    -if offer.coupon_id.present? && offer.coupon_state != "saved"
+      =link_to image_tag("zavers_save_it.png"), save_coupon_path(offer.coupon_id), :remote => true
+    -elsif offer.coupon_id.present? && offer.coupon_state == "saved"
+      =link_to image_tag("delete.png"), remove_coupon_path(offer.coupon_id), :remote => true

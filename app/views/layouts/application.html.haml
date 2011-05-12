@@ -1,65 +1,73 @@
 !!! 5
-%html
+%html{:lang => "en"}
   %head
+    %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width; initial-scale=1.0"}
     %title Zavers Reference Application
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tag
+
     /[if lt IE 9]
-      :javascript
-        document.createElement("nav");
-        document.createElement("header");
-        document.createElement("footer");
-        document.createElement("section");
-        document.createElement("article");
+      = javascript_include_tag("http://html5shim.googlecode.com/svn/trunk/html5.js")
+    /[if lt IE 9]
+      = javascript_include_tag("http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js")
+
   %body
-    %header#page_header
-      %h1 Zavers Reference Application
-      #my_breadcrumbs
-        %ul#breadcrumb
-          %li
-            = link_to(image_tag("home.png", :alt => "Home", :class => "Home"), root_path, :title => "Home")
-          - if current_user
-            %li
-              = link_to("Logout", logout_path)
-            %li
-              = link_to("Brand Offers", brand_offers_path)
-            %li
-              = link_to("Retail Offers", retail_offers_path)
-            %li
-              = link_to("Saved Offers", saved_offers_path)
-            %li
-              = link_to("Edit My Account", edit_consumer_path(current_user.consumer_id))
-          - else
-            %li
-              = link_to("Login", login_path)
-            %li
-              = link_to("Signup Today!", signup_path)
+    #pagewrap
+      %header#header
+        %hgroup
+          %h1#site-logo= link_to("Boomstick", "#")
+          %h2#site-description Shop Smart... Shop S-Mart
+        %nav
+          %ul#main-nav.clearfix
+            - if current_user
+              %li= link_to("Logout", logout_path)
+              %li= link_to("Brand Offers", brand_offers_path)
+              %li= link_to("Retail Offers", retail_offers_path)
+              %li= link_to("Saved Offers", saved_offers_path)
+              %li= link_to("Edit My Account", edit_consumer_path(current_user.consumer_id))
+            - else
+              %li= link_to("Login", login_path)
+              %li= link_to("Signup Today!", signup_path)
+        %form#searchform
+          %input#s{:type => "search", :placeholder => "Search"}
+      #content
+        %article.post.clearfix
+          %header
+            %h1.post-title= link_to("Just a test", "#")
+            %p.post-meta
+              %time.post-date{:datetime => "2011-05-08"} May 8, 2011
+          -# %figure.post-image= image_tag("simple-image.jpg")
+          - if flash.notice
+            .notice= flash.notice
+          = yield
 
-    %section#sidebar
-      %nav
-        - if current_user
-          %h3= "Welcome #{current_user.try(:first_name)}"
-        %h3 Menu
-        %ul
-          %li
-            %a{:href => "#"}link text
+          %h3 Vimeo Video
+          .video
+            -# %iframe{:src => "http://player.vimeo.com/video/6284199",  :width => "550", :height => "400",  :frameborder => "0"}
+          %h3 YouTube
+          .video
+            -# %object{:width => "500", :height => "400"}
+              -# %param{:name => "movie", :value => "http://www.youtube.com/v/NmRTreaCJXs?version=3"}
+              -# %param{:name => "allowFullScreen", :value => "true"}
+              -# %param{:name => "allowscriptaccess", :value => "always"}
+              -# %param{:name => "wmode", :value => "transparent"}
+              -# %embed{:wmode => "transparent", :src => "http://www.youtube.com/v/NmRTreaCJXs?version=3", :type => "application/x-shockwave-flash", :width => "600", :height => "420", :allowscriptaccess => "always", :allowfullscreen => "true"}
+      %aside#sidebar
+        %section.widget
+          %h4.widgettitle Sidebar
+          %ul
+            %li= link_to("Home", "#")
+            %li= link_to("About", "#")
+            %li= link_to("Privacy", "#")
+        %section.widget.clearfix
+          %h4.widgettitle Created By
+          %ul
+            %li Eldon Alameda
 
-    %section#main_body
-      - if flash.notice
-        .notice= flash.notice
-      = yield
-
-    %footer#page_footer
-      %p &copy; 2011 Eldon Alameda
-      %nav
-        %ul
-          %li
-            %a{:href => "#"}Home
-          %li
-            %a{:href => "#"}About
-          %li
-            %a{:href => "#"}Privacy
+      %footer#footer
+        %p Zavers Reference Application
 
 :javascript
   $.ajaxSetup({

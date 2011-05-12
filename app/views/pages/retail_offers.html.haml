@@ -1,6 +1,3 @@
 #coupons
   - @offers.offers.each do |offer|
     = render :partial => "offers", :locals => { :offer  => offer }
-
-:javascript
-  $("#coupons").columnize({ columns: 2});
