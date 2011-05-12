@@ -1,0 +1,70 @@
+%h1 Edit Your Account
+= form_for @consumer, :url => update_consumer_path do |f|
+  %p
+    = f.label :email, "Email"
+    = f.text_field :email
+
+  %p
+    = f.label :mobile, "Mobile"
+    = f.text_field :mobile
+
+  %p
+    = f.label :first_name, "First Name"
+    = f.text_field :first_name
+
+  %p
+    = f.label :last_name, "Last Name"
+    = f.text_field :last_name
+
+  %p
+    = f.label :address_1, "Address Line 1"
+    = f.text_field :address_1
+
+  %p
+    = f.label :address_2, "Address Line 2"
+    = f.text_field :address_2
+
+  %p
+    = f.label :city, "City"
+    = f.text_field :city
+
+  %p
+    = f.label :state, "State"
+    = f.text_field :state
+
+  %p
+    = f.label :zip_code, "Zip Code"
+    = f.text_field :zip_code
+
+  %p
+    = f.label :home_number, "Home Number"
+    = f.text_field :home_number
+
+  %p
+    = f.label :account_news, "Account News"
+    = f.radio_button(:account_news, 'true') + "Yes"
+    = f.radio_button(:account_news, 'false') + "No"
+
+  %p
+    = f.label :program_news, "Program News"
+    = f.radio_button(:program_news, 'true') + "Yes"
+    = f.radio_button(:program_news, 'false') + "No"
+
+  %p
+    = f.label :opt_in_mobile_text, "Opt In to Mobile Texts"
+    = f.radio_button(:opt_in_mobile_text, 'true')+ "Yes"
+    = f.radio_button(:opt_in_mobile_text, 'false')+ "No"
+  %p
+    = f.submit 'Update My Info'
+
+%h1 Loyalty Cards
+- @retailer = {3 => "A&amp;P", 7 => "Bi-Lo", 8 => "Kroger", 9 => "Pathmark", 10 => "S.N.A.P.", 20 => "Walmart", 21 => "Harris Teeter", 22 => "Kohl's",
+  23 => "Disney Movie Rewards", 4 => "F.E.M.A", 25 => "VT Living", 27 => "Retailer 22", 28 => "Taco Bell", 29 => "Best Buy", 30 => "Best Buy",
+  31 => "Best Buy", 32 => "Best Buy"}
+
+
+- @consumer.loyalty_cards.each do |lc|
+  %p= "Card ID = #{lc.id}"
+  %p= "Card Retailer = #{@retailer[lc.retailer_id.to_i]}"
+  %p= "Card Value = #{lc.value}"
+

@@ -1,0 +1,87 @@
+!!! 5
+%html
+  %head
+    %title Zavers Reference Application
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tag
+    /[if lt IE 9]
+      :javascript
+        document.createElement("nav");
+        document.createElement("header");
+        document.createElement("footer");
+        document.createElement("section");
+        document.createElement("article");
+  %body
+    %header#page_header
+      %h1 Zavers Reference Application
+      #my_breadcrumbs
+        %ul#breadcrumb
+          %li
+            = link_to(image_tag("home.png", :alt => "Home", :class => "Home"), root_path, :title => "Home")
+          - if current_user
+            %li
+              = link_to("Logout", logout_path)
+            %li
+              = link_to("Brand Offers", brand_offers_path)
+            %li
+              = link_to("Retail Offers", retail_offers_path)
+            %li
+              = link_to("Saved Offers", saved_offers_path)
+            %li
+              = link_to("Edit My Account", edit_consumer_path(current_user.consumer_id))
+          - else
+            %li
+              = link_to("Login", login_path)
+            %li
+              = link_to("Signup Today!", signup_path)
+
+    %section#sidebar
+      %nav
+        - if current_user
+          %h3= "Welcome #{current_user.try(:first_name)}"
+        %h3 Menu
+        %ul
+          %li
+            %a{:href => "#"}link text
+
+    %section#main_body
+      - if flash.notice
+        .notice= flash.notice
+      = yield
+
+    %footer#page_footer
+      %p &copy; 2011 Eldon Alameda
+      %nav
+        %ul
+          %li
+            %a{:href => "#"}Home
+          %li
+            %a{:href => "#"}About
+          %li
+            %a{:href => "#"}Privacy
+
+:javascript
+  $.ajaxSetup({
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+    }
+  });
+
+  $(document).ready(function() {
+    function couponDeliver(trackid) {
+      var el = $("div[data-coupon_id='"+trackid+"']");
+      if(trackid != ""){
+        $.post("/deliver/"+trackid+"");
+      }
+    }
+
+    $('.coupon').waypoint(function(event) {
+      couponDeliver($(this).data('coupon_id'));
+      event.stopPropagation();
+    }, {
+      triggerOnce: true,
+      offset: 'bottom-in-view'
+    });
+  });
+

@@ -1,0 +1,96 @@
+html { background-color: #4B7399;}
+
+body {
+  width: 760px;
+  margin: 15px auto;
+  font-family: Arial, "MS Trebuchet", sans-serif;
+  background-color: #FFF;
+  /* background: #FAF0D9; */
+  border: solid 1px black;
+  padding: 20px 40px;
+  border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+  -moz-box-shadow: 5px 5px 5px #333; -webkit-box-shadow: 5px 5px 5px #333; -o-box-shadow: 5px 5px 5px #333; box-shadow: 5px 5px 5px #333;
+}
+
+#my_breadcrumbs #breadcrumb { font: 11px Arial, Helvetica, sans-serif; background-image: url('/assets/bc_bg.png');
+  background-repeat: repeat-x; height: 30px; line-height: 30px; color: #9b9b9b; border: solid 1px #cacaca;
+  width: 100%; overflow: hidden; margin: 0px; padding: 0px; }
+
+#my_breadcrumbs #breadcrumb li{ list-style-type: none; float: left; padding-left: 10px; }
+
+#my_breadcrumbs #breadcrumb a{ height: 30px; display:block; background-image:url('/assets/bc_separator.png');
+  background-repeat: no-repeat; background-position: right; padding-right: 15px; text-decoration:none; color: #454545; }
+
+#my_breadcrumbs .home { border: none; margin: 8px 0px; }
+
+#my_breadcrumbs #breadcrumb a:hover { color: #35acc5; }
+p { margin:0 0 20px 0; }
+header#page_header { width: 100;}
+header#page_header nav ul, #page_footer nav ul{ list-style: none; margin: 0; padding: 0; }
+#page_header nav ul li, footer#page_footer nav ul li { padding:0; margin: 0 20px 0 0; display:inline; }
+section#main_body{ float: left; width: 74%; padding-top: 15px; }
+section#main_body aside{ float: right; width: 35%; margin-left: 5%; font-size: 20px; line-height: 40px; }
+section#sidebar{ float: left; width: 25%; }
+footer#page_footer{ clear: both; width: 100%; display: block; text-align: center; }
+.notice { border: 1px solid; margin: 10px 0px; padding: 15px 10px 15px 50px; background-repeat: no-repeat;
+  background-position: 10px center; position: relative; color: #00529B; background-color: #BDE5F8;
+  background-image: url('/assets/info.png');}
+
+
+.coupon {height: 185px; width: 212px; background: url(http://expo.zavers.com/images/zavers_consumer/coupon_top.png) no-repeat 0% 0%; position: relative;
+text-align: center;}
+.coupon_container .coupon h3.header {width: 100%; color: #26A024; font-family: 'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana;
+    font-size: 99.1%; font-weight: bold; line-height: 1; margin-left: 0px; position: relative;}
+.coupon_container .coupon .main {width: 100%; }
+.coupon_container .coupon .main .main_text {width: 110px; }
+.coupon_container .coupon .main .main_text p.coupon_copy {font-size: 75%; font-weight: bold; line-height: 1.2; clear: left; color: black; float: left; width: 97px;}
+.coupon_container .coupon .main .main_text p.expires{ color: #9A9A9A; font-family: 'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Arial; font-size: 47%; margin-top: 5px; }
+.coupon_container .coupon .main .main_image {width: 100px; float: right; padding 2px;}
+
+.coupon_container .menu_bar {clear: all; background: url(http://expo.zavers.com/images/zavers_consumer/coupon_bottom.png) no-repeat 0% 100%; bottom: 0px; height: 40px; left: 0px;
+    position: absolute; width: 212px;}
+
+.drop-shadow { position:relative; width:90%; }
+
+.drop-shadow:before, .drop-shadow:after {
+   content:"";
+   position:absolute;
+   z-index:-1;
+   bottom:15px;
+   left:10px;
+   width:50%;
+   height:20%;
+   max-width:300px;
+   -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+   -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+   box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+   -webkit-transform:rotate(-3deg);
+   -moz-transform:rotate(-3deg);
+   -o-transform:rotate(-3deg);
+   transform:rotate(-3deg);
+}
+
+.drop-shadow:after{
+   right:10px;
+   left:auto;
+   -webkit-transform:rotate(3deg);
+   -moz-transform:rotate(3deg);
+   -o-transform:rotate(3deg);
+   transform:rotate(3deg);
+ }
+
+.curved::before {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.597656) 0px 0px 15px;
+}
+.curved-hz-2::before{
+  border-bottom-left-radius: 100px 10px;
+  border-bottom-right-radius: 100px 10px;
+  border-top-left-radius: 100px 10px;
+  border-top-right-radius: 100px 10px;
+  bottom: 0px;
+  left: 10px;
+  right: 10px;
+  top: 0px;
+}
+
+#coupon_pagignation { clear: both;}

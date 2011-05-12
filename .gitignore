@@ -1,0 +1,19 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.DS_Store
+Icon?
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+.*.sw[a-z]
+*.un~
+Session.vim
+coverage/
+coverage.data
+

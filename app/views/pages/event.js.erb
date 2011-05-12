@@ -1,0 +1,3 @@
+<% if params[:event] != "deliver" %>
+  $(".coupon[data-coupon_id='<%= @coupon_id %>']").fadeOut('slow')
+<% end %>
