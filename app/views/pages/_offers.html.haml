@@ -5,7 +5,17 @@
   .body.clearfix
     %img{:src => offer.image_url}
     %p.coupon_copy= offer.display_name + " " + offer.short_description
+    -if offer.learn_more_text.present?
+      %p.learn_more= offer.learn_more_text
   .footer.clearfix
+    -if offer.terms_and_conditions.present?
+      = "TERMS"
+    -if offer.video_url.present?
+      = "VIDEO"
+    -if offer.audio_url.present?
+      = "AUDIO"
+    -if offer.learn_more_image_url.present?
+      = "IMAGE"
     -if offer.coupon_id.present? && offer.coupon_state != "saved"
       =link_to image_tag("zavers_save_it.png"), save_coupon_path(offer.coupon_id), :remote => true
     -elsif offer.coupon_id.present? && offer.coupon_state == "saved"
