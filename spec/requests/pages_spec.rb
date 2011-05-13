@@ -8,10 +8,14 @@ feature "Home Page", %q{
 
   background do
     @offer1 = mock(:offer_summary => "Shop Smart", :display_name => '...', :short_description => "Shop S Mart", 
-                  :campaign_end_date => "2011-12-1", :image_url => "", :coupon_id => nil, :coupon_state => "delivered")
+                  :campaign_end_date => "2011-12-1", :image_url => "", :coupon_id => nil, :coupon_state => "delivered",
+                  :learn_more_text => nil, :audio_url => nil, :video_url => nil, :terms_and_conditions => nil,
+                  :learn_more_image_url => nil)
 
     @offer2 = mock(:offer_summary => "Big Money", :display_name => 'No Whammies', :short_description => "STOP",
-                  :campaign_end_date => "2011-12-1", :image_url => "", :coupon_id => nil, :coupon_state => "delivered")
+                  :campaign_end_date => "2011-12-1", :image_url => "", :coupon_id => nil, :coupon_state => "delivered",
+                  :learn_more_text => nil, :audio_url => nil, :video_url => nil, :terms_and_conditions => nil,
+                  :learn_more_image_url => nil)
   end
 
   scenario "Home page that displays sample brand offers" do
@@ -32,16 +36,6 @@ feature "Home Page", %q{
     visit "/"
     page.should have_link "Login"
     page.should have_link "Signup Today!"
-  end
-
-  scenario "Home page that should display a welcome message when logged in" do
-    Zavers.stub(:offers).and_return mock(OffersList, :offers => [@offer1, @offer2], :total_count => 2, :coupon_ids => [])
-    @offer1.stub(:coupon_id).and_return(1234)
-    @offer2.stub(:coupon_id).and_return(3456)
-    sign_in!
-    visit "/"
-    page.should have_content "Welcome Eric"
-    page.should_not have_link "Login"
   end
 
   scenario "Brand Offers page that displays manufacturer offers" do

@@ -40,6 +40,16 @@ class PagesController < ApplicationController
     flash.now.notice = "You currently don't have any saved offers" if @offers.offers.empty?
   end
 
+  def search_offers
+    @offers = Zavers.offers(:consumer_id => current_user.consumer_id,
+                            :page => normalize_page_number(params[:page]),
+                            :per_page => 10,
+                            :search_terms => params[:search],
+                            :state => ['new', 'delivered', 'viewed'],
+                            :retailer_id => "ALL")
+    flash.now.notice = "There are no offers that matched your search" if @offers.offers.empty?
+    render :saved_offers
+  end
 
 
 

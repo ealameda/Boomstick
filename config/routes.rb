@@ -9,6 +9,7 @@ Boomstick::Application.routes.draw do
   match "deliver/:coupon_id" => "pages#event", :event => "deliver", :as => :deliver_coupon
   match "save/:coupon_id" => "pages#event", :event => "select", :as => :save_coupon
   match "remove/:coupon_id" => "pages#event", :event => "remove", :as => :remove_coupon
+  match "search_offers" => "pages#search_offers", :as => :search_offers
   resources :consumers
   resources :local_consumers, :controller => "consumers"
 
