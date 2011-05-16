@@ -28,7 +28,6 @@ group :development, :test do
   gem 'rspec-rails', '2.6.0.rc6'
   gem 'capybara',    '1.0.0.beta1'
   gem 'launchy'
-  gem 'cover_me', '>= 1.0.0.rc6'
 end
 
 group :test do
