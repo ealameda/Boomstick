@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:darkel/monster_mash.git
+  remote: git://github.com/darkel/monster_mash.git
   revision: 137ce5912c2949d5dd79eb2bd861090b8a2267ae
   specs:
     monster_mash (0.2.3)

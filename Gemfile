@@ -7,7 +7,7 @@ gem 'rails', '3.1.0.beta1'
 
 gem 'sqlite3'
 gem 'haml'
-gem 'monster_mash', :git => 'git@github.com:darkel/monster_mash.git'
+gem 'monster_mash', :git => 'git://github.com/darkel/monster_mash.git'
 
 # Asset template engines
 gem 'sass'
