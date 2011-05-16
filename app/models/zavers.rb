@@ -12,7 +12,6 @@ class Zavers < MonsterMash::Base
   end
 
   post(:consumer_create) do |options|
-    # need to make this cleaner for input parameters
     uri "http://expo.zavers.com/api/consumer.xml"
     params  :type_id => "email",
             :id_value => options[:email],
@@ -29,7 +28,6 @@ class Zavers < MonsterMash::Base
   end
 
   post(:consumer_update) do |options|
-    # need to make this cleaner for input parameters
     uri "http://expo.zavers.com/api/consumer/#{options[:consumer_id]}.xml"
     params  :first_name         => options[:first_name],
             :last_name          => options[:last_name],
@@ -73,20 +71,6 @@ class Zavers < MonsterMash::Base
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   # get(:retailers)
     # /api/consumer/[consumer_id]/retailers.xml
     # /api/retailers/[zip_code].xml
@@ -95,12 +79,8 @@ class Zavers < MonsterMash::Base
     # /api/consumer/[consumer_id]/manufacturers.xml
     # /api/manufacturers/[zip_code].xml
 
-
   # post(:offers_media)
     # /api/campaigns/media_catalog.xml
-
-  # post(:offer_event)
-    # /api/consumer/[consumer_id]/coupon/[coupon_id].xml
 
 
   # post(:reset_password)

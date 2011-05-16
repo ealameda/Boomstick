@@ -4,7 +4,7 @@ require 'nokogiri'
 
   attr_reader :code, :type, :message
 
-  def initialize(attributes)
+  def initialize(attributes={})
     @code     =  attributes[:code] || "500"
     @type     =  attributes[:type] || "Unknown Error" 
     @message  =  attributes[:message] || "We're sorry, but something went wrong. We've been notified about this issue and we'll take a look at it shortly."
@@ -25,8 +25,7 @@ require 'nokogiri'
         ZaversError.from_xml(item)
       end.first
     else
-      ZaversError.new(:code => "500", :type => "Unknown Error",
-        :message => "We're sorry, but something went wrong. We've been notified about this issue and we'll take a look at it shortly.")
+      ZaversError.new
     end
   end
 end
