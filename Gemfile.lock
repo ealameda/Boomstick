@@ -157,6 +157,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   monster_mash!
+  nokogiri
   pg
   rails (= 3.1.0.beta1)
   rspec-rails (= 2.6.0.rc6)

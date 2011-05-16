@@ -13,6 +13,7 @@ gem 'monster_mash', :git => 'git://github.com/darkel/monster_mash.git'
 gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
+gem 'nokogiri'
 
 gem 'jquery-rails'
 

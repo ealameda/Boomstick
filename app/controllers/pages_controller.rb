@@ -20,6 +20,7 @@ class PagesController < ApplicationController
                        :coupon_id => @coupon_id,
                        :event => params[:event],
                        :date_time => Time.now.iso8601)
+    # Cannot transition from 'new' state using the 'select' event\\
   end
 
   def retail_offers
