@@ -16,6 +16,8 @@ gem 'uglifier'
 
 gem 'jquery-rails'
 
+gem 'therubyracer-heroku', '0.8.1.pre3'
+gem 'pg'
 # Deploy with Capistrano
 # gem 'capistrano'
 
