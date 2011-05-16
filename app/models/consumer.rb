@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'nokogiri'
-
 class Consumer
 
   attr_accessor :consumer_id, :email, :mobile, :loyalty_cards,  :zip_code, :status, :household_id,

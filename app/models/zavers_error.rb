@@ -1,7 +1,4 @@
 class ZaversError < StandardError
-require 'rubygems'
-require 'nokogiri'
-
   attr_reader :code, :type, :message
 
   def initialize(attributes={})

@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'nokogiri'
-
 class OffersList
   attr_reader :offers, :total_count, :consumer_id
 
