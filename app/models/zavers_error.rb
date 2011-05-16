@@ -11,19 +11,15 @@ require 'nokogiri'
   end
 
   def self.from_xml(xml)
-    new(
-      :code     =>  xml.css("code").text,
-      :type     =>  xml.css("type").text,
-      :message  =>  xml.css("message").text
-    )
+    new(:code     =>  xml.css("code").text,
+        :type     =>  xml.css("type").text,
+        :message  =>  xml.css("message").text)
   end
 
   def self.parse(xml)
     doc = Nokogiri::XML(xml).css("error")
     if doc && doc.any?
-      doc.map do |item|
-        ZaversError.from_xml(item)
-      end.first
+      ZaversError.from_xml(doc.first)
     else
       ZaversError.new
     end
