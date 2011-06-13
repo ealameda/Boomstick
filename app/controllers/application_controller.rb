@@ -22,4 +22,3 @@ class ApplicationController < ActionController::Base
     page.to_i.abs
   end
 end
-

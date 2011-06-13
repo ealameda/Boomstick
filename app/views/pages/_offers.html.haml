@@ -17,6 +17,6 @@
     -if offer.learn_more_image_url.present?
       = "IMAGE"
     -if offer.coupon_id.present? && offer.coupon_state != "saved"
-      =link_to image_tag("zavers_save_it.png"), save_coupon_path(offer.coupon_id), :remote => true
+      =link_to image_tag("zavers_save_it.png"), save_coupon_path(offer.coupon_id), :remote => true, :disable_with => "Saving Coupon..."
     -elsif offer.coupon_id.present? && offer.coupon_state == "saved"
       =link_to image_tag("delete.png"), remove_coupon_path(offer.coupon_id), :remote => true

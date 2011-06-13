@@ -42,4 +42,3 @@ class ConsumersController < ApplicationController
      redirect_to edit_consumer_path(current_user.consumer_id), :notice => e.message
   end
 end
-
