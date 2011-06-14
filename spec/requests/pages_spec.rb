@@ -10,12 +10,12 @@ feature "Home Page", %q{
     @offer1 = mock(:offer_summary => "Shop Smart", :display_name => '...', :short_description => "Shop S Mart", 
                   :campaign_end_date => "2011-12-1", :image_url => "", :coupon_id => nil, :coupon_state => "delivered",
                   :learn_more_text => nil, :audio_url => nil, :video_url => nil, :terms_and_conditions => nil,
-                  :learn_more_image_url => nil)
+                  :learn_more_image_url => nil, :campaign_id => 1234)
 
     @offer2 = mock(:offer_summary => "Big Money", :display_name => 'No Whammies', :short_description => "STOP",
                   :campaign_end_date => "2011-12-1", :image_url => "", :coupon_id => nil, :coupon_state => "delivered",
                   :learn_more_text => nil, :audio_url => nil, :video_url => nil, :terms_and_conditions => nil,
-                  :learn_more_image_url => nil)
+                  :learn_more_image_url => nil, :campaign_id => 3456)
   end
 
   scenario "Home page that displays sample brand offers" do

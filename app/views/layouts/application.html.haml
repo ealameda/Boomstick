@@ -80,6 +80,8 @@
       }
     }
 
+    $('a[rel*=facebox]').facebox();
+
     $('.coupon').waypoint(function(event) {
       couponDeliver($(this).data('coupon_id'));
       event.stopPropagation();

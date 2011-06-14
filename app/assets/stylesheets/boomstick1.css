@@ -179,7 +179,7 @@ COUPONS
 .coupon .body img {float: right; margin: 5px;}
 .coupon .body p { margin-left: 14px; margin-right: 100px; font-size: 16px; color: #000;}
 .coupon .body p.learn_more { font-size: 14px; }
-.coupon .footer a {float:right; margin: 5px 3px;}
+.coupon .footer img {float:right; margin: 5px 3px;}
 .coupon .footer p { margin: 10px 5px 1px 10px; font-size: 12px;}
 
 /************************************************************************************
