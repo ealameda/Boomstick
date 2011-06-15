@@ -26,4 +26,3 @@ class OfferEvent
     end.first
   end
 end
-

@@ -29,4 +29,3 @@ class Identifier
     )
   end
 end
-

@@ -1,4 +1,4 @@
-.coupon{'data-coupon_id' => offer.campaign_id}
+.coupon{'data-coupon_id' => offer.coupon_id}
   .header
     %p.expires= "Expires: #{Date.parse(offer.campaign_end_date).to_s(:coupon_format)}"
     %h2.header= offer.offer_summary
@@ -16,10 +16,6 @@
       = link_to "Learn More", "#learn_#{offer.campaign_id}", :rel => "facebox"
       %div{:id => "learn_#{offer.campaign_id}", :style => "display:none;"}
         = offer.learn_more_text
-    -if offer.video_url.present?
-      -# =link_to "Video", offer.video_url , :rel => "facebox"
-    -if offer.audio_url.present?
-      -# =link_to "Audio", offer.audio_url , :rel => "facebox"
     -if offer.learn_more_image_url.present?
       =link_to "Image", offer.learn_more_image_url , :rel => "facebox"
     -if offer.coupon_id.present? && offer.coupon_state != "saved"

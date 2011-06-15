@@ -1,10 +1,9 @@
-%h1 Login
-
-= form_tag(session_path) do
-  %p
+- content_for(:title) do
+  %h1.post-title Login
+#stylized
+  = form_tag(session_path, :class => "uniForm") do
     = label_tag("identifier", "Email")
     = text_field_tag("identifier")
-  %p
     = label_tag("password", "Password")
     = password_field_tag("password")
-  = submit_tag "Login"
+    = submit_tag "Login", {:class => 'button'}

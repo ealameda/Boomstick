@@ -1,3 +1,5 @@
+- content_for(:title) do
+  %h1.post-title Retail Offers
 #coupons
   - @offers.offers.each do |offer|
     = render :partial => "offers", :locals => { :offer  => offer }

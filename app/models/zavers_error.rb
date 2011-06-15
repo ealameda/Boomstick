@@ -22,4 +22,3 @@ class ZaversError < StandardError
     end
   end
 end
-

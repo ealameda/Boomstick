@@ -76,4 +76,3 @@ class Offer
     )
   end
 end
-

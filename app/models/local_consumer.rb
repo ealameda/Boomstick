@@ -68,4 +68,3 @@ class LocalConsumer
     }
   end
 end
-
