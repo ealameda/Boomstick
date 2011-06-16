@@ -118,6 +118,13 @@ smaller than 560
 		font-size: 90%;
 		padding: 10px 8px;
 	}
-
+  #facebox .content {
+    display:table;
+    width: 320px;
+    padding: 10px;
+    background: #fff;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+  }
 }
-
